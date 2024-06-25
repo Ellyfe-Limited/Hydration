@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hydration Calculator</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/xlsx@0.16.9/dist/xlsx.full.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1 class="text-center my-4">Hydration Calculator</h1>
+        <label for="Hydration Caluclator"><img src="Icons/ellyfe.jfif" alt="Ellyfe Logo" width="150"> Hydration Caluclator</label>
+        <form id="hydration-form">
+            <div class="form-row">
+                <div class="col-md-4 mb-3">
+                    <label for="heart-rate"><img src="Icons/heart.png" alt="Heart Icon" width="60"> Heart Rate</label>
+                    <input type="number" class="form-control" id="heart-rate" placeholder="Enter Heart Rate">
+                </div>
+                <div class="col-md-4 mb-3">
+                    <label for="spo2"><img src="Icons/lungs.jpg" alt="Lungs Icon" width="60"> SpO2</label>
+                    <input type="number" class="form-control" id="spo2" placeholder="Enter SpO2">
+                </div>
+                <div class="col-md-4 mb-3">
+                    <label for="respiration-rate"><img src="Icons/breathing.png" alt="Breathing Icon" width="60"> Respiration Rate</label>
+                    <input type="number" class="form-control" id="respiration-rate" placeholder="Enter Respiration Rate">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="col-md-4 mb-3">
+                    <label for="ambient-temp"><img src="Icons/thermometer.jpg" alt="Thermometer Icon" width="60"> Ambient Temperature</label>
+                    <input type="number" class="form-control" id="ambient-temp" placeholder="Enter Ambient Temperature">
+                </div>
+                <div class="col-md-4 mb-3">
+                    <label for="skin-temp"><img src="icons/thermometer.jpg" alt="Thermometer Icon" width="60"> Skin Temperature</label>
+                    <input type="number" class="form-control" id="skin-temp" placeholder="Enter Skin Temperature">
+                </div>
+                <div class="col-md-4 mb-3">
+                    <label for="age"><img src="Icons/user.png" alt="User Icon" width="60"> Age</label>
+                    <input type="number" class="form-control" id="age" placeholder="Enter Age">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="col-md-4 mb-3">
+                    <label for="height"><img src="Icons/ruler.jfif" alt="Ruler Icon" width="60"> Height (cm)</label>
+                    <input type="number" class="form-control" id="height" placeholder="Enter Height (cm)">
+                </div>
+                <div class="col-md-4 mb-3">
+                    <label for="sex"><img src="Icons/gender.jpg" alt="Gender Icon" width="60"> Sex</label>
+                    <select class="form-control" id="sex">
+                        <option value="M">Male</option>
+                        <option value="F">Female</option>
+                    </select>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <label for="body-weight"><img src="Icons/weight.jpg" alt="Weight Icon" width="60"> Body Weight (kg)</label>
+                    <input type="number" class="form-control" id="body-weight" placeholder="Enter Body Weight (kg)">
+                </div>
+            </div>
+            <button type="button" class="btn btn-primary btn-block" onclick="calculateHydration()">Calculate Hydration</button>
+        </form>
+        <div id="result" class="text-center my-4"></div>
+        <div class="progress">
+            <div id="hydration-progress" class="progress-bar" role="progressbar" style="width: 0;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+        </div>
+        <button id="download-btn" class="btn btn-success btn-block mt-4" onclick="downloadData()">Download Data</button>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
